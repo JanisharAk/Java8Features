@@ -1,6 +1,7 @@
 package part01_LambdaExpressions.part09_StreamApi;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -96,6 +97,27 @@ public class Code01_ImportantCode {
         Map<Integer, Long> freqMap = list1.stream()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
         System.out.println(freqMap);
+
+
+        System.out.println("=====================");
+
+        //find the 2nd largest element
+        Integer secondLargestVal = list1.stream()
+                .sorted(Comparator.reverseOrder())
+                .skip(1)
+                .findFirst()
+                .get();
+        System.out.println("secondLargestVal : " + secondLargestVal);
+
+        System.out.println("=====================");
+        //find the 2nd minimum element
+        Integer secondMinimumVal = list1.stream()
+                .sorted(Integer::compare)
+                .skip(1)
+                .findFirst()
+                .get();
+        System.out.println("secondMinimumVal : " + secondMinimumVal);
+
 
 
 
