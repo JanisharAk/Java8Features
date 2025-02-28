@@ -2,6 +2,7 @@ package part01_LambdaExpressions.part09_StreamApi;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Code01_ImportantCode {
@@ -76,7 +77,25 @@ public class Code01_ImportantCode {
                 .get();
         System.out.println(integer2);
 
+        Integer maxVal = list1.stream()
+                .max(Integer::compare)
+                .get();
+        System.out.println(maxVal);
 
+        System.out.println("=====================");
+
+        //find the min value
+        Integer minVal = list1.stream()
+                .min(Integer::compare)
+                .get();
+        System.out.println(minVal);
+
+        System.out.println("=====================");
+
+        // find the frequency HashMap
+        Map<Integer, Long> freqMap = list1.stream()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        System.out.println(freqMap);
 
 
 
