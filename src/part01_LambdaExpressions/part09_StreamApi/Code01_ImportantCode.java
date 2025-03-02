@@ -118,6 +118,13 @@ public class Code01_ImportantCode {
                 .get();
         System.out.println("secondMinimumVal : " + secondMinimumVal);
 
+        System.out.println("=====================");
+        //find the sum of all elements in a list
+        Integer sum = list1.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+        System.out.println("total sum : " + sum);
+
 
 
 
