@@ -1,9 +1,6 @@
 package part01_LambdaExpressions.part09_StreamApi;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Code01_ImportantCode {
@@ -124,6 +121,15 @@ public class Code01_ImportantCode {
                 .mapToInt(Integer::intValue)
                 .sum();
         System.out.println("total sum : " + sum);
+
+        System.out.println("=====================");
+//   Q. Find the longest string in a list of strings using Java streams:
+        List<String> strings = Arrays
+                .asList("apple", "banana", "cherry", "date", "grapefruit");
+        Optional<String> longestString = strings
+                .stream()
+                .max(Comparator.comparingInt(String::length));
+        System.out.println(longestString);
 
 
 
