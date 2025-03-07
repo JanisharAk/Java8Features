@@ -1,6 +1,6 @@
 package part01_LambdaExpressions.part09_StreamApi.part01;
 
-public class Person {
+public class class01_Person {
     private String name;
     private int age;
 
@@ -8,7 +8,7 @@ public class Person {
         return age;
     }
 
-    public Person(String name, int age) {
+    public class01_Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
