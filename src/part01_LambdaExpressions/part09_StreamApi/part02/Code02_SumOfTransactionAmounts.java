@@ -2,6 +2,7 @@ package part01_LambdaExpressions.part09_StreamApi.part02;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalDouble;
 
 public class Code02_SumOfTransactionAmounts {
 
@@ -19,5 +20,18 @@ public class Code02_SumOfTransactionAmounts {
                 .sum();
 
         System.out.println("Total transaction amount: " + totalAmount);
+
+        // Compute the average of the transaction amounts
+        OptionalDouble avgAmount = transactions.stream()
+                .mapToInt(Code01_Transaction::getAmount)
+                .average();
+
+        // Print the average if present
+        if (avgAmount.isPresent()) {
+            System.out.println("Average transaction amount: " + avgAmount.getAsDouble());
+        } else {
+            System.out.println("No transactions available.");
+
+        }
     }
 }
