@@ -21,18 +21,40 @@ public class Code02_SumOfTransactionAmounts {
 
         System.out.println("Total transaction amount: " + totalAmount);
 
+        System.out.println("===============================");
+
         // Compute the average of the transaction amounts
         OptionalDouble avgAmount = transactions.stream()
                 .mapToInt(Code01_Transaction::getAmount)
                 .average();
+        System.out.println("Average transaction amount: " + avgAmount.getAsDouble());
 
         // Print the average if present
-        if (avgAmount.isPresent()) {
-            System.out.println("Average transaction amount: " + avgAmount.getAsDouble());
-        } else {
-            System.out.println("No transactions available.");
+//        if (avgAmount.isPresent()) {
+//            System.out.println("Average transaction amount: " + avgAmount.getAsDouble());
+//        } else {
+//            System.out.println("No transactions available.");
+//
+//        }
+        System.out.println("===============================");
 
-        }
+        // Compute the Lagest amount of an transaction amounts
+        int largestAmount = transactions.stream()
+                .mapToInt(Code01_Transaction::getAmount) // Extract transaction amounts
+                .max() // Get the maximum value
+                .orElse(0); // Default to 0 if the list is empty
+        System.out.println("Largest transaction amount: " + largestAmount);
+
+        System.out.println("===============================");
+
+        //Compute the Smallest amount of an transaction amounts
+        int smallestAmount = transactions.stream()
+                .mapToInt(Code01_Transaction::getAmount)
+                .min()
+                .orElse(0);
+        System.out.println("Smallest transaction amount: " + smallestAmount);
+
+
     }
 }
 
