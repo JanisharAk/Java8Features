@@ -54,7 +54,8 @@ public class Code02_SumOfTransactionAmounts {
                 .orElse(0);
         System.out.println("Smallest transaction amount: " + smallestAmount);
 
-
+        //Diferrence between largestAmount and smallestAmount
+        int diffAmount = 
     }
 }
 
