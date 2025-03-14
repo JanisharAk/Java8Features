@@ -38,4 +38,8 @@ public class Code01_Employee {
                 ", rating=" + rating +
                 '}';
     }
+
+    public Object newJoiner() {
+        return newJoiner;
+    }
 }

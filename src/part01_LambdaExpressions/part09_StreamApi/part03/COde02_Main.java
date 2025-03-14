@@ -25,5 +25,19 @@ public class COde02_Main {
 
         // Printing Female Employees
         femaleEmployees.forEach(System.out::println);
+
+        System.out.println("===============================");
+        // We will filter the employees list with newJoiner as "True" and collect into a list
+        List<Code01_Employee> newJoiners = empList.stream()
+                .filter(e -> e.newJoiner().equals("True")) // Ensure newJoiner() returns String or adjust accordingly
+                .collect(Collectors.toList());
+
+        // Printing new joiners
+        newJoiners.forEach(System.out::println);
+
+        System.out.println("===============================");
+
+
     }
+
 }
